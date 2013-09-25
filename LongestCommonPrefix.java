@@ -1,4 +1,3 @@
-
 /*
  * Write a function to find the longest common prefix string amongst an array of strings.
  * */
@@ -19,20 +18,20 @@ public class LongestCommonPrefix {
     
     public static String FindCommonPrefix(String s1, String s2){
     	if(s1.length() < s2.length()){
-    		if(s2.substring(0, s1.length()) == s1){
+    		if(s2.substring(0, s1.length()).equals(s1)){
     			return s1;
     		}else{
-    			for(int i = 1; i < s1.length(); i++){
+    			for(int i = 0; i < s1.length(); i++){
     				if(s1.charAt(i) != s2.charAt(i)){
     					return s1.substring(0, i);
     				}
     			}
     		}
     	}else{
-    		if(s1.substring(0, s2.length()) == s2){
+    		if(s1.substring(0, s2.length()).equals(s2)){
     			return s2;
     		}else{
-    			for(int i = 1; i < s2.length(); i++){
+    			for(int i = 0; i < s2.length(); i++){
     				if(s2.charAt(i) != s1.charAt(i)){
     					return s2.substring(0, i);
     				}
