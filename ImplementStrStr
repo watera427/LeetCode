@@ -1,0 +1,32 @@
+/** 
+ * Implement strStr(). 
+ *  
+ * Returns a pointer to the first occurrence of needle in haystack, or null if 
+ * needle is not part of haystack. 
+ *  
+ */ 
+
+
+public class ImplementStrStr {
+
+	
+	public String strStr(String haystack, String needle) {
+		
+		if(needle.length() == 0) return haystack;
+		
+		if(haystack == null || needle == null) return null;
+        
+		int ans = 0;
+		int end = haystack.length() - needle.length();
+		
+		while(ans <= end){
+			if(haystack.substring(ans,needle.length() + ans).equals(needle)){
+				break;
+			}else{
+				ans++;
+			}
+		}
+		return ans > end? null:haystack.substring(ans);
+    }
+
+}
